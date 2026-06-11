@@ -1,20 +1,3 @@
-:root {
-    --color-bg: #f8fafc;
-
-    --color-primary: #e28ce7;
-    --color-secondary: #85a8e1;
-    --color-accent: #f43f5e;
-
-    --color-title: #0f172a;
-    --color-text: #64748b;
-    --color-white: #ffffff;
-
-    --color-badge: #8b5cf6;
-
-    --color-button: #1e293b;
-    --color-button-hover: #0f172a;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -23,123 +6,217 @@
 
 body {
     min-height: 100vh;
-    background: var(--color-bg);
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 20px;
+    background: #f5f7fa;
+    color: #1f2937;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif
+}
+
+.hero {
+    width: 100%;
+    min-height: 250px;
+    background: rgb(47, 35, 35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 10px;
+}
+
+.hero-container {
+    text-align: center;
+    color: white;
+    max-width: 900px;
+}
+
+.hero-container h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #fcd116, #003893, #ce1126);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.hero-container p {
+    font-size: clamp(0.9rem, 2vw, 1.4rem);
+    line-height: 1.3;
+    margin-bottom: 40px;
+}
+
+.hero-badge {
+    background: #df898d;
+    padding: 9px 22px;
+    border-radius: 50px;
+    font-size: clamp(0.6rem, 2vw, 1.2rem);
+    font-weight: 700;
 }
 
 .container{
-    min-height: 100vh;
+    width: min(1400px, 90%);
+    margin: 50px auto;
     display: grid;
-    place-items: center; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 35px;
 }
 
 .card {
-    width: min(100%, 700px);
-    background: rgba(255, 255, 255, .79);
-    padding: 40px;
-    border-radius: 24px;
-    box-shadow: 0 15px 40px rgba(0,0,0,.08);
-    display: grid;
-    gap: 25px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: rgba(255, 255, 255, .89);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    overflow: hidden;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
 }
 
 .badge {
-    justify-self: center;
-    background: var(--color-badge);
-    color: var(--color-white);
+    margin: 15px auto 20px;
+    background: linear-gradient(90deg, #fcd116, #003893, #ce1126);
+    color: white;
     padding: 8px 16px;
     border-radius: 999px;
     font-size: 0.9rem;
     font-weight: bold;
 }
 
-.card h1 {
-    color: var(--color-title);
+.card-img {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
 }
 
-.card p {
-    color: var(--color-text);
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.card:hover img {
+    transform: scale(1.08);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px;
+    flex: 1;
+}
+
+.card-body h2 {
+    text-align: center;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    text-align: center;
+    color: #6b7280;
     line-height: 1.5;
     font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
-.search-container{
-    position: relative;
-    display: grid;
-    gap: 10px;
-}
-
-.search-container label{
-    font-weight: 600;
-    color: var(--color-title);
-}
-
-#buscar{
+.btn-explorar {
     width: 100%;
-    padding: 18px;
-    border: 2px solid #e2e8f0;
-    border-radius: 14px;
-    font-size: 1rem;
-    outline: none;
-    transition: .3s;
-}
-
-#buscar:focus{
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 5px rgba(226,140,231,.15);
-}
-
-#lista{
-    list-style: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: white;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,.08);
-    z-index: 10;
-}
-
-#lista li{
-    padding: 14px 18px;
+    border: none;
     cursor: pointer;
+    background: linear-gradient(135deg, #003893, #ce1126);
+    color: white;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
     transition: .3s;
 }
 
-#lista li:hover{
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    color:white;
+.btn-explorar:hover {
+    transform: translateY(-10px);
 }
 
-#infoDepartment{
+.contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    animation: aparecer .3s ease;
+}
+
+.contenido input, .contenido select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.contenido ul {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contenido li {
+    padding: 10px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.contenido li:hover {
+    background: #e5e7eb;
+}
+
+#infoDepartment, #infoAirpt, #infoANat{
+    min-height: 100px;
+    padding: 15px;
+    border-radius: 12px;
     background: #f8fafc;
-    border-radius: 18px;
-    padding: 25px;
-    min-height: 180px;
-    display: grid;
-    place-items: center;
+    border: 1px solid #e5e7eb;
 }
 
-.placeholder{
-    text-align: center;
-    color: var(--color-text);
-    display: grid;
-    gap: 10px;
+@keyframes aparecer {
+    from{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.placeholder{
-    font-size: 1.1rem;
+.oculto {
+    display: none;
 }
 
 @media (max-width: 768px){
-    .card {
-        padding: 25px;
+    .hero {
+        min-height: 260px;
     }
-    #buscar {
-        padding: 15px;
+    .card-img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px){
+    .hero-container p {
+        font-size: 0.95rem;
+    }
+    .card-body {
+        padding: 18px;
     }
 }
