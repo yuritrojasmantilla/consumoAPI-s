@@ -8,20 +8,77 @@
 </head>
 
 <body>
+    <header class="hero">
+        <div class="hero-container">
+            <h1>EXPLORADOR DE COLOMBIA</h1>
+            <p>Descubre Departamentos, Aeropuertos y Áreas Naturales de Colombia.</p>
+            <span class="hero-badge">API Colombia</span>
+        </div>
+    </header>
+
     <main class="container">
         <section class="card">
-            <span class="badge">API Colombia</span>
+            <span class="badge">Colombia</span>
 
-            <h1>DEPARTAMENTOS DE COLOMBIA</h1>
-            <p>Escribe el nombre de un Departamento de Colombia y obtén sugerencias en tiempo real. Al seleccionar una opción se mostrará información detallada del Departamento.</p>
-                    
-            <div class="search-container"> 
-                <label for="buscar">Departamentos de Colombia:</label>
-                <input id="buscar" type="text" placeholder="Buscar Departamentos...">
-                <ul id="lista"></ul>
+            <div class="card-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Departments_of_colombia.svg/960px-Departments_of_colombia.svg.png" alt="Departamentos de Colombia">
             </div>
-            
-            <div id="infoDepartment"></div>
+
+            <div class="card-body">
+                <h2>DEPARTAMENTOS</h2>
+                <p>Consulta información de los departamentos de Colombia.</p>
+                <button class="btn-explorar">Explorar</button>
+                
+                <div class="contenido oculto" id="departamentos">
+                    <label for="buscar">Departamentos de Colombia:</label>
+                    <input id="buscar" type="text" placeholder="Buscar Departamento...">
+                    <ul id="listaDept"></ul>
+                    <div id="infoDepartment"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <span class="badge">Colombia</span>
+
+            <div class="card-img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo4s9Rl8F-6TrAo_OstZhSQen-Clbc3ioTiQ&s" alt="Aeropuerto El Dorado">
+            </div>
+
+            <div class="card-body">
+                <h2>AEROPUERTOS</h2>
+                <p>Explora los aeropuertos de Colombia según su categoría y ubicación.</p>
+                <button class="btn-explorar">Explorar</button>
+                
+                <div class="contenido oculto" id="aeropuertos">
+                    <select id="tipoAeropuerto">
+                        <option value="">Seleccione un tipo</option>
+                    </select>
+                    <ul id="listaAirpt"></ul>
+                    <div id="infoAirpt"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <span class="badge">Colombia</span>
+
+            <div class="card-img">
+                <img src="https://colombia.travel/sites/default/files/PRCO_Foto_Interna_Travel_800x450_shutterstock_606918752_De_VarnaK_Can%CC%83oCristales.png" alt="Parques Naturales">
+            </div>
+
+            <div class="card-body">
+                <h2>ÁREAS NATURALEA</h2>
+                <p>Descubre parque nacionales y áreas naturales protegidas de Colombia.</p>
+                <button class="btn-explorar">Explorar</button>
+                
+                <div class="contenido oculto" id="naturales">
+                    <label for="buscar">Áreas Naturales de Colombia:</label>
+                    <input id="buscar" type="text" placeholder="Buscar área natural...">
+                    <ul id="listaANat"></ul>
+                    <div id="infoANat"></div>
+                </div>
+            </div>
         </section>
     </main>
 
